@@ -1,0 +1,37 @@
+{
+  "name": "demo-jike",
+  "description": "A Vue.js web extension",
+  "version": null,
+  "manifest_version": 2,
+  "icons": {
+    "48": "icons/jike.png",
+    "128": "icons/jike.png"
+  },
+  "browser_action": {
+    "default_title": "new-tab-page",
+    "default_icon": "icons/jike.png",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "storage"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "tab/tab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.baidu.com/"
+      ],
+      "js": [
+        "./notclick.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
