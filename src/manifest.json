@@ -26,7 +26,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://www.baidu.com/"
+        "*://detail.1688.com/offer/*"
       ],
       "js": [
         "./notclick.js"
